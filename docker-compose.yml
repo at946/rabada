@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  nuxt:
+    build: .
+    command: yarn dev
+    volumes:
+      - .:/app
+      - .npm
+    ports:
+      - 3000:3000
