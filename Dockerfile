@@ -10,7 +10,7 @@ COPY package.json ${HOME}
 
 RUN apk update && \
     apk upgrade && \
-    yarn add bulma node-sass sass-loader
+    yarn add bulma node-sass sass-loader @nuxtjs/google-analytics
 
 COPY . ${HOME}
 
