@@ -18,8 +18,9 @@
         </ul>
       </div>
       <div class="buttons is-centered mb-2" v-if="poster == 'Duck'">
-        <button class="button is-rounded is-outlined is-primary" @click="post('なんで？')">なんで？</button>
-        <button class="button is-rounded is-outlined is-primary" @click="post('つまり？')">つまり？</button>
+        <button class="button is-small is-rounded is-outlined is-primary" @click="post('うんうん')">うんうん</button>
+        <button class="button is-small is-rounded is-outlined is-primary" @click="post('なんで？')">なんで？</button>
+        <button class="button is-small is-rounded is-outlined is-primary" @click="post('つまり？')">つまり？</button>
       </div>
       <div class="control">
         <textarea class="textarea is-primary"
