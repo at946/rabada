@@ -1,0 +1,10 @@
+// @import '~bulma/sass/utilities/initial-variables';
+// $primary: red;
+// $navbar-breakpoint: 10000;
+@import '~bulma/bulma';
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}

@@ -6,6 +6,6 @@ services:
     command: yarn dev
     volumes:
       - .:/app
-      - .npm
+      - /app/node_modules
     ports:
       - 3000:3000
