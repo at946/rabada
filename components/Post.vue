@@ -1,7 +1,7 @@
 <template>
   <article class="media">
     <figure class="media-left">
-      <p class="image is-64x64">
+      <p class="image is-48x48">
         <img v-if="post.name == 'Duck'" class="is-rounded" src="~/assets/images/duck.png">
         <img v-else class="is-rounded" src="~/assets/images/you.png">
       </p>
