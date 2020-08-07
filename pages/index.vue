@@ -1,5 +1,5 @@
 <template>
-  <div class="has-background-white" style="height: 100vh; display: flex; flex-direction: column; max-width: 540px; margin-right: auto; margin-left: auto;">
+  <div class="card has-background-white" style="height: 100vh; display: flex; flex-direction: column; max-width: 540px; margin-right: auto; margin-left: auto;">
     <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
         <div class="navbar-item has-text-weight-bold">rabada</div>
