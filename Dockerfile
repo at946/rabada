@@ -7,11 +7,12 @@ ENV HOME=/app     \
 
 WORKDIR ${HOME}
 COPY package.json ${HOME}
+COPY yarn.lock ${HOME}
 
 RUN apk update && \
     apk upgrade && \
-    yarn add bulma node-sass sass-loader @nuxtjs/google-analytics
-
+    yarn install
+    
 COPY . ${HOME}
 
 EXPOSE 3000
