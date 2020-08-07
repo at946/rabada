@@ -17,8 +17,7 @@
           <li :class="{'is-active': poster == 'Duck'}"><a @click="click_duck">Duck</a></li>
         </ul>
       </div>
-      <div class="mb-2" v-if="poster == 'Duck'">
-        <button class="button is-rounded is-outlined is-primary" @click="post('うんうん')">うんうん</button>
+      <div class="buttons is-centered mb-2" v-if="poster == 'Duck'">
         <button class="button is-rounded is-outlined is-primary" @click="post('なんで？')">なんで？</button>
         <button class="button is-rounded is-outlined is-primary" @click="post('つまり？')">つまり？</button>
       </div>

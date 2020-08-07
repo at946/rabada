@@ -10,6 +10,8 @@ COPY package.json ${HOME}
 
 RUN apk update && \
     apk upgrade && \
-    yarn add nuxt bulma node-sass sass-loader
+    yarn add bulma node-sass sass-loader
+
+COPY . ${HOME}
 
 EXPOSE 3000
