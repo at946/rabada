@@ -25,8 +25,9 @@ export default {
       { hid: 'og:type', property: 'og:type', content: 'website' },
       { hid: 'og:url', property: 'og:url', content: 'https://rabada.herokuapp.com' },
       { hid: 'og:description', property: 'og:description', content: process.env.npm_package_description },
-      { hid: 'og:image', property: 'og:image', content: '/ogp.png' },
-      { hid: 'twitter:card', content: 'summary_large_image' },
+      { hid: 'og:image', property: 'og:image', content: 'https://rabada.herokuapp.com/ogp.png' },
+      { hid: 'twitter:card', property: 'twitter:card', content: 'summary_large_image' },
+      { hid: 'twitter:creator', property: 'twitter:creator', content: '@at_946' },
       { hid: 'google-site-verification', name: 'google-site-verification', content: "V9WZccOAwvnBmRzeEdzhq9jto4S65oKS2gACDRpRbhA" },
     ],
     link: [
