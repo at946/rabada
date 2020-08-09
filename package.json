@@ -1,5 +1,6 @@
 {
   "name": "rabada",
+  "description": "悩みごと？ラバーダック・デバックで解決しよう！rabadaはラバーダックにもなりきってセルフで壁打ちできるツールだよ。",
   "version": "1.0.0",
   "private": true,
   "scripts": {

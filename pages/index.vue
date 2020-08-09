@@ -49,7 +49,7 @@ export default {
       msg: '',
       poster: 'You',
       posts: [
-        {name: "Duck", msg: "どうしたの？"},
+        {name: "Duck", msg: "悩みごと？ラバーダック・デバックで解決しよう！"},
         {name: "Duck", msg: "ちなみにリロードしたら消えちゃうから気をつけてね！"}
       ]
     }
