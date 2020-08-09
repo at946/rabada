@@ -27,6 +27,7 @@ export default {
       { hid: 'og:description', property: 'og:description', content: process.env.npm_package_description },
       { hid: 'og:image', property: 'og:image', content: '/ogp.png' },
       { hid: 'twitter:card', content: 'summary_large_image' },
+      { hid: 'google-site-verification', name: 'google-site-verification', content: "V9WZccOAwvnBmRzeEdzhq9jto4S65oKS2gACDRpRbhA" },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
