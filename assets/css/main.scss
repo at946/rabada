@@ -1,10 +1,14 @@
-// @import '~bulma/sass/utilities/initial-variables';
-// $primary: red;
+@import '~bulma/sass/utilities/initial-variables';
+$primary: #FCDC2C;
 // $navbar-breakpoint: 10000;
 @import '~bulma/bulma';
+
+// Google fonts
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap');
 
 body {
   height: 100vh;
   display: flex;
   flex-direction: column;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
 }
