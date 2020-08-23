@@ -1,75 +1,81 @@
 <template>
-  <div class="card has-background-white" style="height: 100vh; display: flex; flex-direction: column; max-width: 540px; margin-right: auto; margin-left: auto;">
-    <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
-      <div class="navbar-brand">
-        <div class="navbar-item has-text-weight-bold">rabada</div>
-      </div>
-    </nav>
-    <div class="my-5 mx-5" style="flex: 1; position: relative;">
-      <div ref="posts_field" style="position: absolute; bottom: 0; overflow-y: scroll; max-height: 100%;  width: 100%">
-        <post v-for="post of posts" :post="post" />
-      </div>
+  <div class="px-5 py-5" style="height: 100%; display: flex; flex-direction: column;">
+
+    <div ref="posts_field" style="flex-grow: 1; flex-basis: 0; overflow-y: scroll;">
+      <post v-for="(post, index) in posts" :post="post" :key="index" />
     </div>
-    <div class="field mb-5 mx-5">
+
+    <div class="field pt-5" style="margin-top: auto;">
       <div class="tabs is-centered is-boxed is-fullwidth mb-3">
         <ul>
-          <li :class="{'is-active': poster == 'You'}"><a @click="click_you">You</a></li>
-          <li :class="{'is-active': poster == 'Duck'}"><a @click="click_duck">Duck</a></li>
+          <li :class="{'is-active': poster == 'You'}"><a @click="poster = 'You'">You</a></li>
+          <li :class="{'is-active': poster == 'Duck'}"><a @click="poster = 'Duck'">Duck</a></li>
         </ul>
       </div>
+
       <div class="buttons is-centered mb-2" v-if="poster == 'Duck'">
         <button class="button is-small is-rounded is-outlined is-success" @click="post('うんうん')">うんうん</button>
         <button class="button is-small is-rounded is-outlined is-success" @click="post('なんで？')">なんで？</button>
         <button class="button is-small is-rounded is-outlined is-success" @click="post('つまり？')">つまり？</button>
       </div>
+      
       <div class="control">
         <textarea class="textarea is-primary"
                   ref="post_msg"
                   rows=1
                   placeholder="Enterで送信、Shift+Enterで改行"
                   v-model="msg"
-                  @keydown.enter.exact="keydown_enter"
+                  @keypress.enter.exact="post_msg"
                   @keyup="adjust_textarea_height"
                   autofocus
         ></textarea>
       </div>
     </div>
+
   </div>
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
 import Post from '@/components/Post.vue'
 
 export default {
-  components: {
-    Post
-  },
+
   data: function() {
     return {
       msg: '',
       poster: 'You',
-      posts: [
-        {name: "Duck", msg: "悩みごと？ラバーダック・デバックで解決しよう！"},
-        {name: "Duck", msg: "ちなみにリロードしたら消えちゃうから気をつけてね！"}
-      ]
     }
   },
+
+  components: {
+    Post
+  },
+
+  computed: {
+    posts() {
+      return this.$store.state.posts.posts
+    }
+  },
+
+  mounted() {
+    this.scroll_latest_post()
+  },
+
   methods: {
-    keydown_enter(e) {
-      if (e.keyCode == 13) { 
-        e.preventDefault()
-        this.msg = this.msg.trim()
+    post_msg(e) {
+      e.preventDefault()
+      this.msg = this.msg.trim()
+      if (this.msg) {
         this.post(this.msg)
       }
     },
+
     post(msg) {
       if (msg) {
-        this.posts.push({name: this.poster, msg: msg})
+        this.$store.commit('posts/add', {name: this.poster, msg: msg})
         this.msg = ""
-        this.$nextTick(() => {
-          const target = this.$refs.posts_field
-          target.scrollTop = target.scrollHeight
-        })
+        this.$nextTick(() => { this.scroll_latest_post() })
         if (this.poster == 'You') {
           this.poster = 'Duck'
         } else {
@@ -78,17 +84,17 @@ export default {
         this.$refs.post_msg.focus()
       }
     },
+
+    scroll_latest_post() {
+      const target = this.$refs.posts_field
+      target.scrollTop = target.scrollHeight      
+    },
+
     adjust_textarea_height() {
       const textarea = this.$refs.post_msg
       textarea.style.height = "auto"
       textarea.style.height = textarea.scrollHeight + 'px'
     },
-    click_you() {
-      this.poster = 'You'
-    },
-    click_duck() {
-      this.poster = 'Duck'
-    }
   }
 }
 </script>

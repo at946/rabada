@@ -45,6 +45,7 @@ export default {
   ** https://nuxtjs.org/guide/plugins
   */
   plugins: [
+    { src: '@/plugins/localStorage.js', ssr: false }
   ],
   /*
   ** Auto import components
@@ -63,8 +64,7 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
-    // Doc: https://github.com/nuxt-community/modules/tree/master/packages/bulma
-    // '@nuxtjs/bulma',
+    'nuxt-material-design-icons'
   ],
   /*
   ** Build configuration

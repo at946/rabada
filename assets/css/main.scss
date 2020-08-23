@@ -1,6 +1,6 @@
 @import '~bulma/sass/utilities/initial-variables';
 $primary: #FCDC2C;
-// $navbar-breakpoint: 10000;
+$navbar-breakpoint: 100000px;
 @import '~bulma/bulma';
 
 // Google fonts
@@ -11,4 +11,9 @@ body {
   display: flex;
   flex-direction: column;
   font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+.inline-icons {
+  display: inline-flex!important;
+  vertical-align: middle!important;
 }
