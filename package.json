@@ -1,6 +1,7 @@
 {
-  "name": "rabada",
-  "description": "悩みごと？ラバーダック・デバックで解決しよう！rabadaはラバーダックにもなりきってセルフで壁打ちできるツールだよ。",
+  "name": "rubbduck",
+  "display_name": "RubbDuck | セルフ壁打ちでお悩み解決！",
+  "description": "悩みごと？ラバーダック・デバックで解決しよう！RubbDuckはラバーダックにもなりきってセルフで壁打ちできるツールだよ。",
   "version": "1.0.0",
   "private": true,
   "scripts": {

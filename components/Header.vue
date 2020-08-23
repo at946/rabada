@@ -2,7 +2,7 @@
   <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
 
-      <div class="navbar-item has-text-weight-bold">rabada</div>
+      <div class="navbar-item has-text-weight-bold">RubbDuck</div>
 
       <a role="button" class="navbar-burger burger" :class="{ 'is-active': open_burger }" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" @click="toggle_burger">
         <span aria-hidden="true"></span>
