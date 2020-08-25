@@ -8,5 +8,9 @@ export const state  = () => ({
 export const mutations = {
   add(state, post) {
     state.posts.push(post)
+  },
+
+  delete(state, index) {
+    state.posts.splice(index, 1)
   }
 }

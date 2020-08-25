@@ -2,7 +2,7 @@
   <div class="px-5 py-5" style="height: 100%; display: flex; flex-direction: column;">
 
     <div ref="posts_field" style="flex-grow: 1; flex-basis: 0; overflow-y: scroll;">
-      <post v-for="(post, index) in posts" :post="post" :key="index" />
+      <post v-for="(post, index) in posts" :post="post" :key="index" @delete_post="delete_post(index)" />
     </div>
 
     <div class="field pt-5" style="margin-top: auto;">
@@ -86,6 +86,10 @@ export default {
         }
         this.$refs.post_msg.focus()
       }
+    },
+
+    delete_post(index) {
+      this.$store.commit('posts/delete', index)
     },
 
     scroll_latest_post() {

@@ -12,11 +12,20 @@
         <p style="white-space: pre-wrap; word-wrap: break-word;">{{ post.msg }}</p>
       </div>
     </div>
+    <div class="media-right">
+      <button class="delete" @click="delete_post"></button>
+    </div>
   </article>  
 </template>
 
 <script>
 export default {
-  props: ['post']
+  props: ['post'],
+  
+  methods: {
+    delete_post() {
+      this.$emit('delete_post')
+    }
+  }
 }
 </script>
