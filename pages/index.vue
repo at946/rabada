@@ -58,8 +58,12 @@ export default {
     }
   },
 
-  mounted() {
-    this.scroll_latest_post()
+  watch: {
+    posts () {
+      this.$nextTick(() => {
+        this.scroll_latest_post()
+      })
+    }
   },
 
   methods: {
@@ -75,7 +79,6 @@ export default {
       if (msg) {
         this.$store.commit('posts/add', {name: this.poster, msg: msg})
         this.msg = ""
-        this.$nextTick(() => { this.scroll_latest_post() })
         if (this.poster == 'You') {
           this.poster = 'Duck'
         } else {
